@@ -117,7 +117,7 @@ public final class PlayerHolder {
     // helper to handle context in common place as using the same
     // context to bind/unbind a service is crucial
     private Context getCommonContext() {
-        return App.getApp();
+        return App.getInstance();
     }
 
     public void startService(final boolean playAfterConnect,
@@ -159,6 +159,11 @@ public final class PlayerHolder {
 
         private boolean playAfterConnect = false;
 
+        /**
+         * @param playAfterConnection Sets the value of `playAfterConnect` to pass to the {@link
+         * PlayerServiceExtendedEventListener#onPlayerConnected(Player, boolean)} the next time it
+         * is called. The value of `playAfterConnect` will be reset to false after that.
+         */
         public void doPlayAfterConnect(final boolean playAfterConnection) {
             this.playAfterConnect = playAfterConnection;
         }
@@ -183,14 +188,15 @@ public final class PlayerHolder {
             playerService = localBinder.getService();
             if (listener != null) {
                 listener.onServiceConnected(playerService);
-                getPlayer().ifPresent(p -> listener.onPlayerConnected(p, playAfterConnect));
             }
             startPlayerListener();
             // ^ will call listener.onPlayerConnected() down the line if there is an active player
 
-            // notify the main activity that binding the service has completed, so that it can
-            // open the bottom mini-player
-            NavigationHelper.sendPlayerStartedEvent(localBinder.getService());
+            if (playerService != null && playerService.getPlayer() != null) {
+                // notify the main activity that binding the service has completed and that there is
+                // a player, so that it can open the bottom mini-player
+                NavigationHelper.sendPlayerStartedEvent(localBinder.getService());
+            }
         }
     }
 
@@ -357,6 +363,8 @@ public final class PlayerHolder {
                 listener.onPlayerDisconnected();
             } else {
                 listener.onPlayerConnected(player, serviceConnection.playAfterConnect);
+                // reset the value of playAfterConnect: if it was true before, it is now "consumed"
+                serviceConnection.playAfterConnect = false;
                 player.setFragmentListener(internalListener);
             }
         }

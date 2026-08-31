@@ -69,20 +69,20 @@
     <string name="download_path_summary">Vídeos baixados são salvos aqui</string>
     <string name="download_path_title">Pasta para vídeos baixados</string>
     <string name="kore_not_found">Instalar Kore?</string>
-    <string name="main_bg_subtitle">Toque na lupa para começar.</string>
+    <string name="main_bg_subtitle">Toque no ícone de lupa para iniciar sua busca.</string>
     <string name="msg_threads">Processos</string>
     <string name="no_available_dir">Por favor, defina uma pasta de download depois nas configurações</string>
-    <string name="no_player_found">Player de vídeo não encontrado. Instalar VLC?</string>
+    <string name="no_player_found">O player de video não foi encontrado, mas você pode instalar o VLC. Deseja fazer isso?</string>
     <string name="parsing_error">O site não pôde ser analisado</string>
     <string name="play_audio">Áudio</string>
     <string name="play_with_kodi_title">Reproduzir no Kodi</string>
     <string name="search">Pesquisar</string>
     <string name="show_play_with_kodi_summary">Mostrar opção para reproduzir o vídeo no Kodi</string>
     <string name="use_external_audio_player_title">Usar player de áudio externo</string>
-    <string name="use_external_video_player_title">Usar player de vídeo externo</string>
+    <string name="use_external_video_player_title">Usar um player de vídeo alternativo</string>
     <string name="show_play_with_kodi_title">Mostrar opção \"Reproduzir no Kodi\"</string>
-    <string name="info_labels">O que aconteceu:\\nPedido:\\nIdioma do conteúdo:\\nPaís do conteúdo:\\nIdioma do aplicativo:\\nServiço:\\nHora GMT:\\nPacote:\\nVersão:\\nVersão do SO:</string>
-    <string name="open_in_popup_mode">Abrir no modo Popup</string>
+    <string name="info_labels">O que aconteceu:\nPedido:\nIdioma do conteúdo:\nPaís do conteúdo:\nIdioma do aplicativo:\nServiço:\nHora GMT:\nPacote:\nVersão:\nVersão do SO:</string>
+    <string name="open_in_popup_mode">Reproduzir no modo flutuante</string>
     <string name="default_popup_resolution_title">Resolução padrão do Popup</string>
     <string name="show_higher_resolutions_title">Mostrar resoluções mais altas</string>
     <string name="show_higher_resolutions_summary">Apenas alguns dispositivos suportam vídeos em 2K/4K</string>
@@ -90,9 +90,6 @@
     <string name="popup_playing_toast">Reproduzindo em modo Popup</string>
     <string name="all">Todos</string>
     <string name="disabled">Desativado</string>
-    <string name="short_thousand">mil</string>
-    <string name="short_million">mi</string>
-    <string name="short_billion">bi</string>
     <string name="msg_popup_permission">Essa permissão é necessária
 \npara abrir em modo Popup</string>
     <string name="clear">Limpar</string>
@@ -100,19 +97,19 @@
     <string name="controls_background_title">Segundo plano</string>
     <string name="popup_remember_size_pos_title">Lembrar propriedades do Popup</string>
     <string name="popup_remember_size_pos_summary">Lembrar último tamanho e posição do Popup</string>
-    <string name="use_external_video_player_summary">Remove áudio em algumas resoluções</string>
-    <string name="show_search_suggestions_title">Sugestões de pesquisa</string>
+    <string name="use_external_video_player_summary">Atenção: o áudio pode não funcionar em certas resoluções</string>
+    <string name="show_search_suggestions_title">Sugestões de busca</string>
     <string name="show_search_suggestions_summary">Escolha as sugestões a serem exibidas enquanto estiver buscando</string>
     <string name="best_resolution">Melhor resolução</string>
-    <string name="title_licenses">Licenças de Terceiros</string>
-    <string name="tab_about">Sobre &amp; FAQ</string>
+    <string name="title_licenses">Licenças de terceiros</string>
+    <string name="tab_about">Sobre &amp; Perguntas Frequentes</string>
     <string name="tab_licenses">Licenças</string>
-    <string name="app_description">Transmissão leve e livre no Android.</string>
+    <string name="app_description">Streaming leve e gratuito no Android.</string>
     <string name="view_on_github">Ver no GitHub</string>
     <string name="app_license_title">Licença do NewPipe</string>
-    <string name="contribution_encouragement">Se você tem ideias de: tradução, mudança no design, limpeza de código ou grandes mudanças de código — ajuda é sempre bem-vinda. Quanto mais se faz, melhor fica!</string>
+    <string name="contribution_encouragement">Caso você tenha ideias; tradução, alterações de design, limpeza de código ou alterações realmente pesadas de código, a ajuda é sempre bem-vinda. Quanto mais for feito, melhor será!</string>
     <string name="read_full_license">Ler licença</string>
-    <string name="contribution_title">Colaborar</string>
+    <string name="contribution_title">Contribuir</string>
     <string name="copyright" formatted="true">© %1$s %2$s protegido pela licença %3$s</string>
     <string name="title_activity_about">Sobre o NewPipe</string>
     <string name="settings_category_downloads_title">Download</string>
@@ -129,10 +126,10 @@
     <string name="tab_subscriptions">Inscrições</string>
     <string name="fragment_feed_title">Novidades</string>
     <string name="resume_on_audio_focus_gain_title">Continuar reprodução</string>
-    <string name="resume_on_audio_focus_gain_summary">Continua vídeo após interrupções (ex: ligações)</string>
-    <string name="enable_search_history_title">Histórico de pesquisa</string>
-    <string name="enable_search_history_summary">Armazena o histórico de pesquisa localmente</string>
-    <string name="enable_watch_history_title">Histórico de exibição</string>
+    <string name="resume_on_audio_focus_gain_summary">Continuar a reprodução após interrupções (por exemplo, chamadas telefônicas)</string>
+    <string name="enable_search_history_title">Histórico de busca</string>
+    <string name="enable_search_history_summary">Armazena o histórico de busca localmente</string>
+    <string name="enable_watch_history_title">Histórico de reprodução</string>
     <string name="enable_watch_history_summary">Mantenha o controle dos vídeos assistidos</string>
     <string name="title_activity_history">Histórico</string>
     <string name="action_history">Histórico</string>
@@ -163,7 +160,7 @@
     <string name="settings_category_player_title">Player</string>
     <string name="empty_list_subtitle">Nada aqui além de grilos</string>
     <string name="delete_item_search_history">Deseja excluir este item do histórico de busca\?</string>
-    <string name="main_page_content">Conteúdo da página inicial</string>
+    <string name="main_page_content">Conteúdo da tela inicial</string>
     <string name="blank_page_summary">Página em branco</string>
     <string name="kiosk_page_summary">Página do Kiosk</string>
     <string name="channel_page_summary">Página do canal</string>
@@ -187,11 +184,11 @@
     <string name="start_here_on_background">Reproduzir em segundo plano</string>
     <string name="start_here_on_popup">Reproduzir em um Popup</string>
     <string name="donation_title">Doar</string>
-    <string name="donation_encouragement">O NewPipe é desenvolvido por voluntários que usam seu tempo livre para trazer a você a melhor experiência de usuário. Retribua e ajude os desenvolvedores a tornarem o NewPipe ainda melhor enquanto eles desfrutam de uma xícara de café.</string>
+    <string name="donation_encouragement">O NewPipe é desenvolvido por voluntários que passam seu tempo livre trazendo a você a melhor experiência de usuário. Retribua para ajudar os desenvolvedores a tornar o NewPipe ainda melhor enquanto tomam uma xícara de café.</string>
     <string name="give_back">Retribuir</string>
-    <string name="website_title">Site oficial</string>
+    <string name="website_title">Site</string>
     <string name="website_encouragement">Visite o site do NewPipe para mais informações e novidades.</string>
-    <string name="no_player_found_toast">Player de vídeo não encontrado (você pode instalar o VLC para reproduzi-lo).</string>
+    <string name="no_player_found_toast">O player de vídeo não foi encontrado, mas você pode instalar o VLC para tentar reproduzi-lo.</string>
     <string name="default_content_country_title">País padrão do conteúdo</string>
     <string name="always">Sempre</string>
     <string name="just_once">Apenas uma vez</string>
@@ -208,14 +205,14 @@
     <string name="preferred_player_fetcher_notification_message">Carregando conteúdo solicitado</string>
     <string name="import_data_title">Importar base de dados</string>
     <string name="export_data_title">Exportar base de dados</string>
-    <string name="import_data_summary">Substitui seu histórico atual, inscrições, playlists e (opcionalmente) configurações</string>
+    <string name="import_data_summary">Substitui seu histórico atual, inscrições, playlists e configurações (opcional)</string>
     <string name="export_data_summary">Exporta histórico, inscrições, playlists e configurações</string>
     <string name="export_complete_toast">Exportado</string>
     <string name="import_complete_toast">Importado</string>
     <string name="no_valid_zip_file">Nenhum arquivo ZIP válido</string>
     <string name="could_not_import_all_files">Aviso: Não foi possível importar todos os arquivos.</string>
     <string name="override_current_data">Isso irá sobrescrever suas configurações atuais.</string>
-    <string name="controls_download_desc">Baixar arquivo</string>
+    <string name="controls_download_desc">Salvar arquivo para reprodução sem internet</string>
     <string name="show_info">Mostrar informação</string>
     <string name="tab_bookmarks">Playlists favoritas</string>
     <string name="controls_add_to_playlist_title">Adicionar a</string>
@@ -291,28 +288,28 @@
     <string name="playback_tempo">Velocidade</string>
     <string name="playback_pitch">Afinação</string>
     <string name="unhook_checkbox">Desvincular (pode causar distorção)</string>
-    <string name="preferred_open_action_settings_title">Ação de \'abrir\' preferida</string>
+    <string name="preferred_open_action_settings_title">Ação preferida ao tocar em \'Abrir\'</string>
     <string name="preferred_open_action_settings_summary">Ação padrão ao abrir conteúdo — %s</string>
     <string name="no_streams_available_download">Nenhum vídeo disponível para download</string>
     <string name="drawer_open">Abrir gaveta</string>
     <string name="drawer_close">Fechar gaveta</string>
     <string name="caption_setting_title">Legendas</string>
     <string name="caption_setting_description">Mudar tamanho da legenda e estilos de plano de fundo. Requer reiniciar o aplicativo para ter efeito</string>
-    <string name="clear_views_history_title">Remover histórico de exibição</string>
+    <string name="clear_views_history_title">Remover histórico de reprodução</string>
     <string name="clear_views_history_summary">Remove o histórico de vídeos assistidos e as posições de reprodução</string>
-    <string name="delete_view_history_alert">Remover todo o histórico de exibição?</string>
-    <string name="watch_history_deleted">Histórico de exibição removido</string>
-    <string name="clear_search_history_title">Remover histórico de pesquisas</string>
-    <string name="clear_search_history_summary">Remove o histórico de pesquisas</string>
-    <string name="delete_search_history_alert">Remover todo o histórico de pesquisas?</string>
-    <string name="search_history_deleted">Histórico de pesquisa removido</string>
+    <string name="delete_view_history_alert">Remover todo o histórico de reprodução?</string>
+    <string name="watch_history_deleted">Histórico de reprodução removido</string>
+    <string name="clear_search_history_title">Remover histórico de buscas</string>
+    <string name="clear_search_history_summary">Remove o histórico de buscas</string>
+    <string name="delete_search_history_alert">Remover todo o histórico de buscas?</string>
+    <string name="search_history_deleted">Histórico de busca removido</string>
     <string name="one_item_deleted">1 item excluído.</string>
-    <string name="app_license">NewPipe é um copyleft de software livre: Você pode usar, estudar, compartilhar e melhorar a seu gosto. Especificamente você pode redistribuir e/ou modificá-lo sob os termos da GNU General Public License como publicado pela Fundação de Software Livre, na versão 3 da Licença, ou (a seu critério) qualquer versão posterior.</string>
+    <string name="app_license">NewPipe é um software copyleft libre: você pode usá-lo, estudá-lo, compartilhá-lo e melhorá-lo à vontade. Especificamente, você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU conforme publicada pela Free Software Foundation, seja a versão 3 da Licença ou (a seu critério) qualquer versão posterior.</string>
     <string name="import_settings">Você também quer importar as configurações?</string>
-    <string name="privacy_policy_title">Política de privacidade do NewPipe</string>
+    <string name="privacy_policy_title">Política de Privacidade do NewPipe</string>
     <string name="privacy_policy_encouragement">O projeto NewPipe leva sua privacidade muito a sério. Por isso, o aplicativo não coleta nenhum dado sem seu consentimento.
 \nA política de privacidade do NewPipe explica em detalhes quais dados são envidados e salvos quando você manda um relatório de erro.</string>
-    <string name="read_privacy_policy">Ver política de privacidade</string>
+    <string name="read_privacy_policy">Leia a política de privacidade</string>
     <string name="start_accept_privacy_policy">A fim de cumprir com o Regulamento Geral sobre a Proteção de Dados da UE (RGPD), chamamos sua atenção para a política de privacidade do NewPipe. Por favor, leia com atenção.
 \nVocê deve aceitá-la para nos enviar o relatório de erros.</string>
     <string name="accept">Aceitar</string>
@@ -341,7 +338,7 @@
     <string name="app_update_notification_channel_description">Notificações para novas versões do NewPipe</string>
     <string name="download_to_sdcard_error_title">Armazenamento externo indisponível</string>
     <string name="download_to_sdcard_error_message">Não é possível baixar para o cartão SD externo. Redefinir o local da pasta de download\?</string>
-    <string name="saved_tabs_invalid_json">Não foi possível ler as guias salvas, portanto, usamos as guias padrão</string>
+    <string name="saved_tabs_invalid_json">Não foi possível carregar as guias salvas, portanto, usamos as guias padrão</string>
     <string name="restore_defaults">Restaurar configurações</string>
     <string name="restore_defaults_confirmation">Deseja restaurar os padrões?</string>
     <string name="subscribers_count_not_available">Número de inscritos indisponível</string>
@@ -428,7 +425,6 @@
         <item quantity="many">%s ouvintes</item>
         <item quantity="other">%s ouvintes</item>
     </plurals>
-    <string name="localization_changes_requires_app_restart">O idioma será alterado após reiniciar o aplicativo</string>
     <string name="seek_duration_title">Duração de avanço/retrocesso rápido</string>
     <string name="peertube_instance_url_title">Instâncias PeerTube</string>
     <string name="peertube_instance_url_summary">Selecione suas instâncias favoritas do PeerTube</string>
@@ -451,7 +447,7 @@
     <string name="app_language_title">Idioma do aplicativo</string>
     <string name="systems_language">Padrão do sistema</string>
     <string name="subtitle_activity_recaptcha">Toque em \"Pronto\" ao resolver</string>
-    <string name="done">Pronto</string>
+    <string name="done">Concluído</string>
     <string name="videos_string">Vídeos</string>
     <plurals name="seconds">
         <item quantity="one">%d segundo</item>
@@ -521,9 +517,8 @@
     <string name="restricted_video">Este vídeo tem restrição de idade.
 \n
 \nAtive \"%1$s\" nas configurações se quiser vê-lo.</string>
-    <string name="remove_watched_popup_yes_and_partially_watched_videos">Sim, e vídeos parcialmente assistidos</string>
-    <string name="remove_watched_popup_warning">Os vídeos que foram assistidos antes e depois de terem sidos adicionados à playlist serão removidos.
-\nTem certeza? Esta ação não pode ser desfeita!</string>
+    <string name="remove_watched_popup_partially_watched_streams">Sim, e vídeos parcialmente assistidos</string>
+    <string name="remove_watched_popup_warning">Os vídeos que foram assistidos antes e depois de terem sidos adicionados à playlist serão removidos. \nTem certeza?</string>
     <string name="remove_watched_popup_title">Remover vídeos assistidos?</string>
     <string name="remove_watched">Remover assistidos</string>
     <string name="show_original_time_ago_summary">Textos originais dos serviços serão visíveis nos itens de transmissão</string>
@@ -554,7 +549,7 @@
     <string name="notification_action_nothing">Nada</string>
     <string name="notification_action_repeat">Repetir</string>
     <string name="notification_actions_at_most_three">Você pode selecionar até no máximo três botões para mostrar na notificação compacta!</string>
-    <string name="notification_actions_summary">Edite os botões de ação de notificação abaixo tocando em cada um. Selecione até três deles para serem mostrados na notificação compacta usando as caixas de seleção à direita.</string>
+    <string name="notification_actions_summary">Edite os botões de ação da notificação abaixo tocando em cada um. Selecione até três deles para serem mostrados na notificação compacta usando as caixas de seleção à direita.</string>
     <string name="notification_action_4_title">Quinto botão de ação</string>
     <string name="notification_action_3_title">Quarto botão de ação</string>
     <string name="notification_action_2_title">Terceiro botão de ação</string>
@@ -577,7 +572,7 @@
     <string name="msg_calculating_hash">Calculando hash</string>
     <string name="hash_channel_description">Notificações sobre o progresso do hashing de vídeo</string>
     <string name="hash_channel_name">Notificar hash de vídeo</string>
-    <string name="show_meta_info_summary">Desative para ocultar as caixas de informações de metadados com informações adicionais sobre o criador, conteúdo da transmissão ou uma solicitação de pesquisa</string>
+    <string name="show_meta_info_summary">Desative para ocultar as caixas de informações de metadados com informações adicionais sobre o autor, conteúdo da transmissão ou uma solicitação de busca</string>
     <string name="show_meta_info_title">Mostrar informação de metadados</string>
     <string name="recent">Recente</string>
     <string name="chapters">Capítulos</string>
@@ -586,7 +581,7 @@
     <string name="comments_tab_description">Comentários</string>
     <string name="show_description_summary">Desative para ocultar a descrição do vídeo e informações adicionais</string>
     <string name="show_description_title">Mostrar descrição</string>
-    <string name="open_with">Abrir com</string>
+    <string name="open_with">Reproduzir com</string>
     <string name="no_app_to_open_intent">Nenhum aplicativo em seu dispositivo pode abrir isso</string>
     <string name="crash_the_app">O aplicativo parou</string>
     <string name="paid_content">Este conteúdo está disponível apenas para usuários que pagaram, portanto não pode ser transmitido ou baixado pelo NewPipe.</string>
@@ -623,7 +618,6 @@
     <string name="description_select_enable">Ativar seleção de texto na descrição</string>
     <string name="description_select_note">Agora você pode selecionar o texto dentro da descrição. Note que a página pode piscar e os URL podem não ser clicáveis no modo de seleção.</string>
     <string name="open_website_license">Abrir site</string>
-    <string name="service_provides_reason">%s fornece este motivo:</string>
     <string name="account_terminated">Conta encerrada</string>
     <string name="feed_load_error_fast_unknown">O modo feed rápido não fornece mais informações sobre isso.</string>
     <string name="feed_load_error_terminated">A conta do autor foi encerrada.
@@ -638,13 +632,12 @@
     <string name="on">Ativado</string>
     <string name="tablet_mode_title">Modo tablet</string>
     <string name="dont_show">Não mostrar</string>
-    <string name="low_quality_smaller">Baixa qualidade (pior)</string>
+    <string name="low_quality_smaller">Baixa qualidade (menor)</string>
     <string name="high_quality_larger">Alta qualidade (melhor)</string>
-    <string name="seekbar_preview_thumbnail_title">Pré visualização da miniatura da barra de busca</string>
+    <string name="seekbar_preview_thumbnail_title">Pré visualização da miniatura na barra de busca</string>
     <string name="comments_are_disabled">Os comentários estão desabilitados</string>
     <string name="mark_as_watched">Marcar como assistido</string>
     <string name="detail_heart_img_view_description">Curtido pelo criador</string>
-    <string name="show_image_indicators_summary">Exibir fitas coloridas no topo das imagens indicando sua fonte: vermelho para rede, azul para disco e verde para memória</string>
     <plurals name="deleted_downloads_toast">
         <item quantity="one">%1$s download excluído</item>
         <item quantity="many">%1$s downloads excluídos</item>
@@ -655,12 +648,11 @@
         <item quantity="many">%s downloads concluídos</item>
         <item quantity="other">%s downloads concluídos</item>
     </plurals>
-    <string name="show_image_indicators_title">Mostrar indicadores de imagem</string>
     <string name="enqueued_next">Adicionado na próxima posição da fila</string>
     <string name="enqueue_next_stream">Enfileira a próxima</string>
     <string name="main_page_content_swipe_remove">Deslize os itens para remove-los</string>
     <string name="start_main_player_fullscreen_summary">Não inicie os vídeos no mini player, mas vá diretamente para o modo de tela cheia, se a rotação automática estiver bloqueada. Você ainda pode acessar o mini player saindo da tela cheia</string>
-    <string name="start_main_player_fullscreen_title">Iniciar player principal em tela cheia</string>
+    <string name="start_main_player_fullscreen_title">Iniciar reprodução principal em tela cheia</string>
     <string name="remote_search_suggestions">Sugestões de busca remotas</string>
     <string name="local_search_suggestions">Sugestões de busca locais</string>
     <string name="processing_may_take_a_moment">Processando… Pode demorar um pouco</string>
@@ -717,8 +709,8 @@
     <string name="unknown_format">Formato desconhecido</string>
     <string name="unknown_quality">Qualidade desconhecida</string>
     <string name="progressive_load_interval_title">Tamanho do intervalo de carregamento da reprodução</string>
-    <string name="faq">Visualizar no site</string>
-    <string name="faq_description">Se você está com problemas ao usar o aplicativo, confira estas respostas para perguntas comuns!</string>
+    <string name="faq">Ver no site</string>
+    <string name="faq_description">Se você estiver tendo problemas para usar o aplicativo, verifique estas respostas para perguntas comuns!</string>
     <string name="faq_title">Perguntas frequentes</string>
     <string name="sort">Classificar</string>
     <string name="fast_mode">Modo rápido</string>
@@ -731,7 +723,7 @@
     <string name="msg_failed_to_copy">Falha ao copiar para a área de transferência</string>
     <string name="playlist_add_stream_success_duplicate">Duplicata adicionada %d vez(es)</string>
     <string name="duplicate_in_playlist">As playlists em cinza já contêm este item.</string>
-    <string name="ignore_hardware_media_buttons_title">Ignorar eventos de botão de mídia de hardware</string>
+    <string name="ignore_hardware_media_buttons_title">Ignorar eventos de botões físicos (hardware)</string>
     <string name="ignore_hardware_media_buttons_summary">Útil, por exemplo, se você estiver usando um fone de ouvido com botões físicos quebrados</string>
     <string name="remove_duplicates">Remover duplicados</string>
     <string name="remove_duplicates_title">Remover duplicados\?</string>
@@ -830,7 +822,7 @@
     <string name="error_insufficient_storage">Não há espaço livre suficiente no dispositivo</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
-    <string name="settings_category_backup_restore_title">Backup &amp; Restauração</string>
+    <string name="settings_category_backup_restore_title">Backup e restauração</string>
     <string name="auto_update_check_description">O NewPipe pode verificar automaticamente se há novas versões de tempos em tempos e notificá-lo quando elas estiverem disponíveis.
 \nDeseja ativar essa opção?</string>
     <string name="reset_settings_title">Restaurar configurações</string>
@@ -840,4 +832,59 @@
 \nTem certeza de que deseja continuar?</string>
     <string name="import_settings_vulnerable_format">As configurações na exportação que está sendo importada usam um formato vulnerável que foi descontinuado desde o NewPipe 0.27.0. Certifique-se de que a exportação que está sendo importada seja de uma fonte confiável e prefira usar apenas exportações obtidas do NewPipe 0.27.0 ou mais recente no futuro. O suporte para importação de configurações neste formato vulnerável será completamente removido em breve e as versões antigas do NewPipe não poderão mais importar configurações de exportações de novas versões.</string>
     <string name="audio_track_type_secondary">secundário</string>
+    <string name="tab_bookmarks_short">Playlists</string>
+    <string name="select_a_feed_group">Selecione um grupo de feeds</string>
+    <string name="no_feed_group_created_yet">Nenhum grupo de feeds criado ainda</string>
+    <string name="feed_group_page_summary">Página do grupo do canal</string>
+    <string name="search_with_service_name">Buscar %1$s</string>
+    <string name="search_with_service_name_and_filter">Buscar %1$s (%2$s)</string>
+    <string name="channel_tab_likes">Curtidas</string>
+    <string name="migration_info_6_7_title">Página Top 50 do SoundCloud removida</string>
+    <string name="migration_info_6_7_message">O SoundCloud descontinuou as paradas originais do Top 50. A aba correspondente foi removida da sua página principal.</string>
+    <string name="permission_display_over_apps_message">Para usar o Popup Player, selecione %1$s no seguinte menu de configurações do Android e ative %2$s.</string>
+    <string name="permission_display_over_apps_permission_name">“Permitir exibição sobre outros aplicativos”</string>
+    <string name="short_thousand">%sK</string>
+    <string name="short_million">%sM</string>
+    <string name="short_billion">%sB</string>
+    <string name="delete_file">Excluir arquivo</string>
+    <string name="delete_entry">Excluir entrada</string>
+    <string name="migration_info_7_8_title">Tendências combinadas do YouTube removidas</string>
+    <string name="migration_info_7_8_message">O YouTube descontinuou a página de tendências combinadas em 21 de julho de 2025. O NewPipe substituiu a página de tendências padrão pelas transmissões ao vivo em alta.\n\nVocê também pode selecionar páginas de tendências diferentes em \"Configurações &gt; Conteúdo &gt; Conteúdo da página principal\".</string>
+    <string name="trending_gaming">Jogos em alta</string>
+    <string name="trending_podcasts">Podcasts em alta</string>
+    <string name="trending_movies">Filmes e programas em alta</string>
+    <string name="trending_music">Músicas em alta</string>
+    <string name="entry_deleted">Entrada excluída</string>
+    <string name="account_terminated_service_provides_reason">Conta encerrada\n\n%1$s informa este motivo: %2$s</string>
+    <string name="player_http_403">Erro HTTP 403 recebido do servidor durante a reprodução, provavelmente causado por URL de streaming expirado ou IP banido</string>
+    <string name="player_http_invalid_status">Erro HTTP %1$s recebido do servidor durante reprodução</string>
+    <string name="youtube_player_http_403">Erro HTTP 403 recebido do servidor durante a reprodução, provavelmente causado por um banimento de IP ou problemas de desofuscação de URL de streaming</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s se recusou a fornecer dados, solicitando um login para confirmar que o solicitante não é um bot.\n\nSeu IP pode ter sido temporariamente banido por %1$s. Você pode esperar um pouco ou mudar para um IP diferente (por exemplo, ativando/desativando uma VPN ou alternando de Wi-Fi para dados móveis).\n\nConfira <a href="%2$s">este artigo do FAQ</a> para mais informações.</string>
+    <string name="unsupported_content_in_country">Este conteúdo não está disponível para o país selecionado atualmente.\n\nAltere sua seleção acessando “Configurações &gt; Conteúdo &gt; País padrão do conteúdo”.</string>
+    <string name="kao_dialog_warning">Em agosto de 2025, o Google anunciou que, a partir de setembro de 2026, a instalação de aplicativos exigirá a verificação do desenvolvedor para todos os aplicativos Android em dispositivos certificados, incluindo aqueles instalados fora da Play Store. Como os desenvolvedores do NewPipe não concordam com esse requisito, o NewPipe não funcionará mais em dispositivos Android certificados após essa data.</string>
+    <string name="kao_dialog_more_info">Detalhes</string>
+    <string name="kao_solution">Solução</string>
+    <plurals name="export_subscriptions">
+        <item quantity="one">Exportando %d inscrição…</item>
+        <item quantity="many">Exportando %d inscrições…</item>
+        <item quantity="other">Exportando %d inscrições…</item>
+    </plurals>
+    <plurals name="load_subscriptions">
+        <item quantity="one">Carregando %d inscrição…</item>
+        <item quantity="many">Carregando %d inscrições…</item>
+        <item quantity="other">Carregando %d inscrições…</item>
+    </plurals>
+    <plurals name="import_subscriptions">
+        <item quantity="one">Importando %d inscrição…</item>
+        <item quantity="many">Importando %d inscrições…</item>
+        <item quantity="other">Importando %d inscrições…</item>
+    </plurals>
+    <string name="import_subscriptions_title">Importar inscrições</string>
+    <string name="export_subscriptions_title">Exportar inscrições</string>
+    <string name="import_subscriptions_summary">Importar inscrições do arquivo .json exportado anterior</string>
+    <string name="export_subscriptions_summary">Exportar inscrições para arquivo .json</string>
+    <string name="import_from_previous_export">Importar da exportação anterior</string>
+    <string name="api23_requirement_dialog_title">O NewPipe deixará de oferecer suporte ao Android 5</string>
+    <string name="api23_requirement_dialog_message">Infelizmente, o NewPipe depende de algumas bibliotecas que deixaram de oferecer suporte para o Android 5.0 e 5.1. Por isso, a próxima versão do NewPipe só funcionará em dispositivos com Android 6 ou superior, infelizmente. Saiba mais na publicação do blog.</string>
+    <string name="api23_requirement_dialog_blogpost">Postagem no blog</string>
 </resources>

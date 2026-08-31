@@ -8,13 +8,16 @@ import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaDescriptionCompat
 import android.util.Log
 import androidx.annotation.DrawableRes
+import androidx.core.net.toUri
 import androidx.media.MediaBrowserServiceCompat
+import androidx.media.MediaBrowserServiceCompat.BrowserRoot.EXTRA_RECENT
 import androidx.media.MediaBrowserServiceCompat.Result
 import androidx.media.utils.MediaConstants
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.util.function.Consumer
 import org.schabi.newpipe.MainActivity.DEBUG
 import org.schabi.newpipe.NewPipeDatabase
 import org.schabi.newpipe.R
@@ -35,7 +38,6 @@ import org.schabi.newpipe.local.playlist.RemotePlaylistManager
 import org.schabi.newpipe.util.ExtractorHelper
 import org.schabi.newpipe.util.ServiceHelper
 import org.schabi.newpipe.util.image.ImageStrategy
-import java.util.function.Consumer
 
 /**
  * This class is used to cleanly separate the Service implementation (in
@@ -45,8 +47,10 @@ import java.util.function.Consumer
  */
 class MediaBrowserImpl(
     private val context: Context,
-    notifyChildrenChanged: Consumer<String>, // parentId
+    // parentId
+    notifyChildrenChanged: Consumer<String>
 ) {
+    private val packageValidator = PackageValidator(context)
     private val database = NewPipeDatabase.getInstance(context)
     private var disposables = CompositeDisposable()
 
@@ -68,14 +72,26 @@ class MediaBrowserImpl(
         clientPackageName: String,
         clientUid: Int,
         rootHints: Bundle?
-    ): MediaBrowserServiceCompat.BrowserRoot {
+    ): MediaBrowserServiceCompat.BrowserRoot? {
         if (DEBUG) {
             Log.d(TAG, "onGetRoot($clientPackageName, $clientUid, $rootHints)")
         }
 
+        if (!packageValidator.isKnownCaller(clientPackageName, clientUid)) {
+            // this is a caller we can't trust (see PackageValidator's rules taken from uamp)
+            return null
+        }
+
+        if (rootHints?.getBoolean(EXTRA_RECENT, false) == true) {
+            // the system is asking for a root to do media resumption, but we can't handle that yet,
+            // see https://developer.android.com/media/implement/surfaces/mobile#mediabrowserservice_implementation
+            return null
+        }
+
         val extras = Bundle()
         extras.putBoolean(
-            MediaConstants.BROWSER_SERVICE_EXTRAS_KEY_SEARCH_SUPPORTED, true
+            MediaConstants.BROWSER_SERVICE_EXTRAS_KEY_SEARCH_SUPPORTED,
+            true
         )
         return MediaBrowserServiceCompat.BrowserRoot(ID_ROOT, extras)
     }
@@ -103,7 +119,7 @@ class MediaBrowserImpl(
 
     private fun onLoadChildren(parentId: String): Single<List<MediaBrowserCompat.MediaItem>> {
         try {
-            val parentIdUri = Uri.parse(parentId)
+            val parentIdUri = parentId.toUri()
             val path = ArrayList(parentIdUri.pathSegments)
 
             if (path.isEmpty()) {
@@ -123,7 +139,7 @@ class MediaBrowserImpl(
                 )
             }
 
-            when (/*val uriType = */path.removeAt(0)) {
+            when (path.removeAt(0)) {
                 ID_BOOKMARKS -> {
                     if (path.isEmpty()) {
                         return populateBookmarks()
@@ -185,17 +201,17 @@ class MediaBrowserImpl(
         builder
             .setMediaId(createMediaIdForInfoItem(playlist is PlaylistRemoteEntity, playlist.uid))
             .setTitle(playlist.orderingName)
-            .setIconUri(playlist.thumbnailUrl?.let { Uri.parse(it) })
+            .setIconUri(imageUriOrNullIfDisabled(playlist.thumbnailUrl))
 
         val extras = Bundle()
         extras.putString(
             MediaConstants.DESCRIPTION_EXTRAS_KEY_CONTENT_STYLE_GROUP_TITLE,
-            context.resources.getString(R.string.tab_bookmarks),
+            context.resources.getString(R.string.tab_bookmarks)
         )
         builder.setExtras(extras)
         return MediaBrowserCompat.MediaItem(
             builder.build(),
-            MediaBrowserCompat.MediaItem.FLAG_BROWSABLE,
+            MediaBrowserCompat.MediaItem.FLAG_BROWSABLE
         )
     }
 
@@ -212,7 +228,7 @@ class MediaBrowserImpl(
         }
 
         ImageStrategy.choosePreferredImage(item.thumbnails)?.let {
-            builder.setIconUri(Uri.parse(it))
+            builder.setIconUri(imageUriOrNullIfDisabled(it))
         }
 
         return MediaBrowserCompat.MediaItem(
@@ -252,13 +268,13 @@ class MediaBrowserImpl(
     private fun createLocalPlaylistStreamMediaItem(
         playlistId: Long,
         item: PlaylistStreamEntry,
-        index: Int,
+        index: Int
     ): MediaBrowserCompat.MediaItem {
         val builder = MediaDescriptionCompat.Builder()
         builder.setMediaId(createMediaIdForPlaylistIndex(false, playlistId, index))
             .setTitle(item.streamEntity.title)
             .setSubtitle(item.streamEntity.uploader)
-            .setIconUri(Uri.parse(item.streamEntity.thumbnailUrl))
+            .setIconUri(imageUriOrNullIfDisabled(item.streamEntity.thumbnailUrl))
 
         return MediaBrowserCompat.MediaItem(
             builder.build(),
@@ -269,7 +285,7 @@ class MediaBrowserImpl(
     private fun createRemotePlaylistStreamMediaItem(
         playlistId: Long,
         item: StreamInfoItem,
-        index: Int,
+        index: Int
     ): MediaBrowserCompat.MediaItem {
         val builder = MediaDescriptionCompat.Builder()
         builder.setMediaId(createMediaIdForPlaylistIndex(true, playlistId, index))
@@ -277,7 +293,7 @@ class MediaBrowserImpl(
             .setSubtitle(item.uploaderName)
 
         ImageStrategy.choosePreferredImage(item.thumbnails)?.let {
-            builder.setIconUri(Uri.parse(it))
+            builder.setIconUri(imageUriOrNullIfDisabled(it))
         }
 
         return MediaBrowserCompat.MediaItem(
@@ -289,7 +305,7 @@ class MediaBrowserImpl(
     private fun createMediaIdForPlaylistIndex(
         isRemote: Boolean,
         playlistId: Long,
-        index: Int,
+        index: Int
     ): String {
         return buildLocalPlaylistItemMediaId(isRemote, playlistId)
             .appendPath(index.toString())
@@ -301,7 +317,7 @@ class MediaBrowserImpl(
     }
 
     private fun populateHistory(): Single<List<MediaBrowserCompat.MediaItem>> {
-        val history = database.streamHistoryDAO().getHistory().firstOrError()
+        val history = database.streamHistoryDAO().history.firstOrError()
         return history.map { items ->
             items.map { this.createHistoryMediaItem(it) }
         }
@@ -316,7 +332,7 @@ class MediaBrowserImpl(
         builder.setMediaId(mediaId)
             .setTitle(streamHistoryEntry.streamEntity.title)
             .setSubtitle(streamHistoryEntry.streamEntity.uploader)
-            .setIconUri(Uri.parse(streamHistoryEntry.streamEntity.thumbnailUrl))
+            .setIconUri(imageUriOrNullIfDisabled(streamHistoryEntry.streamEntity.thumbnailUrl))
 
         return MediaBrowserCompat.MediaItem(
             builder.build(),
@@ -395,5 +411,13 @@ class MediaBrowserImpl(
 
     companion object {
         private val TAG: String = MediaBrowserImpl::class.java.getSimpleName()
+
+        fun imageUriOrNullIfDisabled(url: String?): Uri? {
+            return if (ImageStrategy.shouldLoadImages()) {
+                url?.toUri()
+            } else {
+                null
+            }
+        }
     }
 }
